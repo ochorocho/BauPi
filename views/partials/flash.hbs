@@ -1,0 +1,25 @@
+<div class="flash">
+    {{#if flash.info}}
+        <div class="callout primary">
+            <p>{{ flash.info }}</p>
+        </div>
+    {{/if}}
+
+    {{#if flash.success}}
+        <div class="callout success">
+            <p>{{ flash.success }}</p>
+        </div>
+    {{/if}}
+
+    {{#if flash.warning}}
+        <div class="callout warning">
+            <p>{{ flash.warning }}</p>
+        </div>
+    {{/if}}
+
+    {{#if flash.error}}
+        <div class="callout error">
+            <p>{{ flash.error }}</p>
+        </div>
+    {{/if}}
+</div>

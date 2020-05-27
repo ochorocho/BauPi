@@ -1,0 +1,30 @@
+<div class="grid-x grid-padding-x">
+    <div class="cell small-12 medium-6">
+        <h2>Images</h2>
+        Count: {{{pictureCount}}}
+        <hr>
+        <div>Latest picture: {{{latest.filename}}}</div>
+        {{#if latest}}
+            <img src="/camera/pictures/{{{latest.path}}}/{{{latest.filename}}}"/>
+        {{else}}
+            No image available, please reload ...
+        {{/if}}
+    </div>
+    <div class="cell small-12 medium-6">
+        <h2>Disks</h2>
+        <div class="grid-x">
+            <div class="cell small-6"><b>Disk:</b></div>
+            <div class="cell small-6"><b>{{disk._filesystem}}</b></div>
+
+            <div class="cell small-6">Available:</div>
+            <div class="cell small-6">{{disk._available}} GB</div>
+
+            <div class="cell small-6">Usage:</div>
+            <div class="cell small-6">{{disk._capacity}}</div>
+
+            <div class="cell small-6">Mounted:</div>
+            <div class="cell small-6">{{disk._mounted}}</div>
+        </div>
+        <hr>
+    </div>
+</div>

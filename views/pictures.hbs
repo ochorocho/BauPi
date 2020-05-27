@@ -1,0 +1,21 @@
+<h1>Pictures</h1>
+
+<form class="grid-x grid-padding-x" action="/pictures" type="GET">
+    <div class="cell small-12">
+        <label>Select image burst</label>
+        <select class="js-picture-dropdown">
+            {{#each directories}}
+                    <option {{#ifeq this @root.current}}selected{{/ifeq}} value="{{{this}}}">{{{this}}}</option>
+            {{/each}}
+        </select>
+    </div>
+</form>
+
+<div class="grid-x grid-padding-x">
+    {{#each pictures}}
+        <div class="cell small-6 medium-4 large-3">
+            <label>{{{this.filename}}}</label>
+            <img class="thumbnail" src="/camera/pictures/{{{this.path}}}/{{{this.filename}}}?resize=300,300"/>
+        </div>
+    {{/each}}
+</div>

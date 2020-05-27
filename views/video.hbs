@@ -1,0 +1,15 @@
+<h1>Video</h1>
+
+<form class="grid-x grid-padding-x" action="/generate-video">
+    <div class="cell small-6 medium-8 large-10">
+        <select name="video">
+            <option value="">Please select burst</option>
+            {{#each directories}}
+                <option value="{{{this}}}">{{{this}}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="cell small-6 medium-4 large-2">
+        <button class="button expanded" type="submit">Render video</button>
+    </div>
+</form>

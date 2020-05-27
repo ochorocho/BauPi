@@ -1,0 +1,12 @@
+.logo {
+    height: 40px;
+    margin: -20px .5rem -20px 0;
+}
+
+.dropdown.menu > li.menu-text > a {
+    padding: 0;
+}
+
+.flash > div {
+    margin-top: 1rem;
+}
