@@ -1,0 +1,9 @@
+[Unit]
+Description=BauPi service
+After=network.target
+[Service]
+Restart=always
+WorkingDirectory=/home/pi/BauPi
+ExecStart=/usr/bin/node /home/pi/BauPi/index.js
+[Install]
+WantedBy=multi-user.target

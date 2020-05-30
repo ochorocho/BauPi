@@ -1,15 +1,22 @@
 <h1>Pictures</h1>
 
-<form class="grid-x grid-padding-x" action="/pictures" type="GET">
-    <div class="cell small-12">
-        <label>Select image burst</label>
-        <select class="js-picture-dropdown">
-            {{#each directories}}
+<form action="/pictures/delete" method="post">
+    <div class="grid-x grid-padding-x">
+        <div class="cell small-10">
+            <label>Select image burst</label>
+            <select name="pictures" class="js-picture-dropdown">
+                {{#each directories}}
                     <option {{#ifeq this @root.current}}selected{{/ifeq}} value="{{{this}}}">{{{this}}}</option>
-            {{/each}}
-        </select>
+                {{/each}}
+            </select>
+        </div>
+        <div class="cell small-2">
+            <label>&nbsp;</label>
+            <button class="button expanded" type="submit">Delete</button>
+        </div>
     </div>
 </form>
+
 
 <div class="grid-x grid-padding-x">
     {{#each pictures}}

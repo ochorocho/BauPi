@@ -2,7 +2,7 @@ const express = require('express')
 const hbs = require('express-handlebars')
 const nodeDiskInfo = require('node-disk-info')
 const path = require('path')
-const fs = require('fs')
+const fs = require('fs-extra')
 const config = require('config')
 const Raspistill = require('node-raspistill').Raspistill
 const dateFormat = require('dateformat')
@@ -28,7 +28,6 @@ const jobQueueFile = path.join(__dirname, 'config/jobQueue.json')
 const JobQueue = require('./jobQueue');
 
 let queue = new JobQueue(jobQueueFile)
-console.log(queue)
 
 const camera = new Raspistill({
   verticalFlip: config.get('picture.flip'),
@@ -143,6 +142,19 @@ app.post('/video/delete', function (req, res) {
   }
 
   res.redirect('/video')
+})
+
+app.post('/pictures/delete', function (req, res) {
+  const pictures = req.body.pictures
+
+  try {
+    fs.removeSync(path.join(picturesPath, pictures))
+    res.flash('success', 'Pictures in' + pictures + ' deleted ...')
+  } catch (e) {
+    res.flash('error', 'Could not delete pictures ' + e.toString())
+  }
+
+  res.redirect('/pictures/current')
 })
 
 app.get('/generate-video', function (req, res) {

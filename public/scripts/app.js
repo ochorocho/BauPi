@@ -1,5 +1,7 @@
 let pictureDropDown = document.querySelector('.js-picture-dropdown');
 
-pictureDropDown.addEventListener('change', function () {
-  window.location = '/pictures/' + this.value;
-})
+if(pictureDropDown) {
+  pictureDropDown.addEventListener('change', function () {
+    window.location = '/pictures/' + this.value;
+  })
+}
