@@ -2,7 +2,7 @@
 
 ## Requirements
 
-* Node >10
+* Node >=10
 * yarn
 * ffmpeg
 * raspistill
