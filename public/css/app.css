@@ -10,3 +10,12 @@
 .flash > div {
     margin-top: 1rem;
 }
+
+.delete {
+    float: right;
+    display: inline;
+}
+
+video {
+    width: 100%;
+}

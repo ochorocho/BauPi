@@ -1,10 +1,10 @@
 {
   "paths": {
-    "pictures": "../pictures/",
-    "videos": "../videos/"
+    "pictures": "pictures/",
+    "videos": "videos/"
   },
   "picture": {
-    "interval": 10,
+    "interval": 3,
     "duration": 0,
     "width": 1920,
     "height": 1080,

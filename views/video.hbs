@@ -13,3 +13,19 @@
         <button class="button expanded" type="submit">Render video</button>
     </div>
 </form>
+
+<div class="grid-x grid-padding-x">
+    {{#each videos}}
+        <div class="cell small-12 medium-6">
+            {{{this.filename}}}
+            <form class="delete" action="/video/delete" method="post">
+                <input type="hidden" name="video" value="{{{this.filename}}}">
+                <input class="button" type="submit" value="X">
+            </form>
+
+            <video controls>
+                <source src="camera/{{{this.path}}}/{{{this.filename}}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            </video>
+        </div>
+    {{/each}}
+</div>
