@@ -25,4 +25,4 @@ sudo systemctl start baupi
 
 GUI is available on port 3000
 
-To change config edit /home/pi/BauPi/config/default.json
+To change config edit `/home/pi/BauPi/config/default.json`
