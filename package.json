@@ -25,6 +25,6 @@
     "node-disk-info": "^1.0.4",
     "node-raspistill": "^1.0.1",
     "npm": "^6.14.6",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.5"
   }
 }
